@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy | Hidaya: The Islamic Path</title>
-<meta name="description" content="Privacy Policy for the Hidaya: The Islamic Path Android app.">
+<meta name="description" content="Privacy Policy for the Hidaya: The Islamic Path app for Android and iPhone.">
 <style>
   :root {
     --ink: #23201b;
@@ -70,13 +70,13 @@
 <main>
 
 <h1>Privacy Policy</h1>
-<p class="sub">Hidaya: The Islamic Path (Android app, <code>com.roninzak.hidaya</code>)</p>
-<p class="dates">Last updated: 30 July 2026. Effective: 30 July 2026.</p>
+<p class="sub">Hidaya: The Islamic Path (Android and iPhone app, <code>com.roninzak.hidaya</code>)</p>
+<p class="dates">Last updated: 17 September 2026. Effective: 17 September 2026.</p>
 
 <div class="lede">
   <p><strong>The short version.</strong> Hidaya calculates your prayer times, the Qibla direction,
   and your reminder alarms entirely on your phone. None of that is sent anywhere.</p>
-  <p>Signing in with Google is required to use the app, so you do have an account with us. Your
+  <p>Signing in with Google, or with Apple on iPhone, is required to use the app, so you do have an account with us. Your
   account holds your sign-in details, your onboarding answers, and a dated record of the worship
   you log, so that your streak and saved items follow you to a new phone. You can delete all of
   it from inside the app at any time.</p>
@@ -134,20 +134,31 @@ results are not transmitted to us or to anyone else:</p>
 </ul>
 
 <h2 id="account">3. Your account</h2>
-<p>Hidaya requires you to sign in with Google before using the app. There is no guest mode. We
-mention this plainly because it means every user of Hidaya has an account, and therefore has
-data stored on our servers.</p>
-<p>Signing in is handled by Google Sign-In and by Supabase Auth, our authentication provider.
-When you sign in, Google provides us with, and our authentication provider stores:</p>
+<p>Hidaya requires you to sign in before using the app: with Google on Android, and with Google
+or with Apple on iPhone. There is no guest mode. We mention this plainly because it means every
+user of Hidaya has an account, and therefore has data stored on our servers.</p>
+<p>Signing in is handled by Google Sign-In or Sign in with Apple, and by Supabase Auth, our
+authentication provider. When you sign in with Google, Google provides us with, and our
+authentication provider stores:</p>
 <ul>
   <li>your email address and whether Google has verified it,</li>
   <li>your Google account name,</li>
   <li>the URL of your Google profile picture,</li>
   <li>a stable identifier for your Google account.</li>
 </ul>
+<p>When you sign in with Apple, Apple provides us with, and our authentication provider stores:</p>
+<ul>
+  <li>your email address, or, if you choose "Hide My Email", a private relay address that Apple
+  forwards to you,</li>
+  <li>your name, which Apple sends only the first time you authorise Hidaya,</li>
+  <li>a stable identifier for your Apple ID.</li>
+</ul>
+<p>With Sign in with Apple we also keep one server-side token from Apple, used for a single
+purpose: when you delete your account, we use it to tell Apple to revoke Hidaya's access to your
+Apple ID (section 13). Nothing else reads it.</p>
 <p>We use these to identify your account and to show you which account you are signed in as. We
 do not use your email address for marketing, and Hidaya sends no marketing email of any kind.
-We never receive or store your Google password.</p>
+We never receive or store your Google or Apple password.</p>
 
 <h2 id="stored">4. What we store on our servers</h2>
 <p>Our backend runs on <strong>Supabase</strong>. Each of the following is tied to your account
@@ -222,9 +233,10 @@ background location access.</p>
   <li><strong>Prayer times and Qibla are computed on your device.</strong> Your coordinates are
   not sent to us for this.</li>
   <li><strong>Your city name is looked up by your phone's operating system.</strong> To turn
-  coordinates into a city name, the app uses the Android system geocoding service. On Android
-  this means Google receives the coordinates as part of providing that operating system service.
-  This is a function of the device, not of our servers.</li>
+  coordinates into a city name, the app uses the operating system's geocoding service. On
+  Android this means Google receives the coordinates, and on iPhone Apple does, as part of
+  providing that operating system service. This is a function of the device, not of our
+  servers.</li>
   <li><strong>Only the city name and country code reach our servers.</strong> Your coordinates
   are never stored in our database.</li>
   <li><strong>Weather uses a rounded, approximate point.</strong> To show the local weather on
@@ -238,12 +250,16 @@ background location access.</p>
 <h2 id="purchases">6. Purchases and the free trial</h2>
 <p>Hidaya is free to download and includes a 7 day free trial. It offers one optional purchase:
 a one-time lifetime unlock. There is no subscription.</p>
-<p>Purchases are processed by <strong>Google Play</strong> and managed through
-<strong>RevenueCat</strong>, a purchase infrastructure provider. When you buy or restore a
-purchase, RevenueCat receives your account identifier from us (the internal identifier for your
-Hidaya account, not your name or email) along with the purchase and receipt information from
-Google Play. RevenueCat then tells our server whether to unlock the paid features.</p>
-<p>Your payment card details are handled by Google Play and never reach Hidaya or our servers.</p>
+<p>Purchases are processed by <strong>Google Play</strong> on Android and by the
+<strong>App Store</strong> on iPhone, and managed through <strong>RevenueCat</strong>, a
+purchase infrastructure provider. When you buy or restore a purchase, RevenueCat receives your
+account identifier from us (the internal identifier for your Hidaya account, not your name or
+email) along with the purchase and receipt information from the store. RevenueCat then tells our
+server whether to unlock the paid features.</p>
+<p>The free trial is tracked by our server from the day your account is created. No payment
+details are asked for, and nothing is charged when it ends.</p>
+<p>Your payment card details are handled by Google Play or by Apple and never reach Hidaya or
+our servers.</p>
 
 <h2 id="donations">7. Voluntary donations</h2>
 <p>The app has an optional "Support Us" screen where you can give a voluntary donation. A
@@ -321,6 +337,14 @@ you asked for. Please also read the note below the table about how Google Play u
       <td>Sign-in provider, app store, and the Android operating system.</td>
       <td>Sign-in details when you authenticate. Purchase details when you buy. Coordinates when
       the operating system resolves your city name.</td>
+    </tr>
+    <tr>
+      <td>Apple</td>
+      <td>Sign-in provider (Sign in with Apple), app store, and the iOS operating system, on
+      iPhone.</td>
+      <td>Sign-in details when you authenticate with Apple, and the token exchange and
+      revocation described in sections 3 and 13. Purchase details when you buy on iPhone.
+      Coordinates when the operating system resolves your city name.</td>
     </tr>
     <tr>
       <td>RevenueCat</td>
@@ -408,8 +432,10 @@ been compromised, contact us at the address in section 17.</p>
 <p>This immediately and permanently deletes your sign-in record and, with it, your profile, your
 activity log, your saved items and settings, and your entitlement row. It is not recoverable. The
 app then clears your data from the device and signs you out.</p>
-<p>A record of any purchase remains with Google Play and RevenueCat, and any donation remains
-with Stripe, for the reasons given in section 12.</p>
+<p>If you signed in with Apple, deleting your account also revokes Hidaya's access to your Apple
+ID, so Hidaya disappears from the "Sign in with Apple" list in your Apple ID settings.</p>
+<p>A record of any purchase remains with Google Play or the App Store and with RevenueCat, and
+any donation remains with Stripe, for the reasons given in section 12.</p>
 <p>If you can no longer sign in, or you would rather ask us to do it, use the request page:
 <a href="delete-account.html">Request account and data deletion</a>.</p>
 
@@ -430,9 +456,10 @@ protection authority. In Ireland this is the Data Protection Commission,
 
 <h2 id="children">15. Children</h2>
 <p>Hidaya is not directed at children. It is intended for adults aged 18 and over, its Google Play
-target age group is 18 and over, and it is not listed in Google Play's Designed for Families
-programme. We do not knowingly collect data from anyone under 18. If you believe a child has
-created an account, contact us and we will delete it.</p>
+target age group is 18 and over, it is not listed in Google Play's Designed for Families
+programme, and it is not in the App Store's Kids category. We do not knowingly collect data from
+anyone under 18. If you believe a child has created an account, contact us and we will delete
+it.</p>
 
 <h2 id="changes">16. Changes to this policy</h2>
 <p>If our data practices change, this page is updated and the "last updated" date at the top
